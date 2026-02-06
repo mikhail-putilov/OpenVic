@@ -62,7 +62,8 @@ func _on_back_button_pressed() -> void:
 	_save_overrides()
 
 func _on_window_close_requested() -> void:
-	_settings.save()
+	if _settings != null:
+		_settings.save()
 	_save_overrides()
 
 func _save_overrides() -> void:
